@@ -4,20 +4,17 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About",
-    "description": "Write about yourself and the content you create"
+    "displayName": "about"
   },
   "options": {
-    "draftAndPublish": false
+    "comment": ""
   },
-  "pluginOptions": {},
   "attributes": {
-    "title": {
+    "phone_number": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "address": {
+      "type": "string"
     }
   }
 }

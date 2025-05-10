@@ -1,5 +1,19 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AuthorSocial extends Struct.ComponentSchema {
+  collectionName: 'components_author_socials';
+  info: {
+    displayName: 'Social';
+    icon: 'share-alt';
+  };
+  attributes: {
+    platform: Schema.Attribute.Enumeration<
+      ['Facebook', 'Tiktok', 'Linkedin', 'Twitter', 'Instagram', 'Youtube']
+    >;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +79,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'author.social': AuthorSocial;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
